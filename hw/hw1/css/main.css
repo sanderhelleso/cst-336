@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta|Quicksand');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mukta', sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+nav {
+    padding: 50px 25px 65px 25px;
+    margin-bottom: 75px;
+    border-bottom: 0.5px solid #eeeeee;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 25px;
+    margin-right: 25px;
+    float: right;
+    padding-bottom: 7.5px;
+}
+
+nav ul li a:hover {
+    color: #8c9eff;
+}
+
+nav ul #logo {
+    float: left;
+    font-size: 45px;
+    margin-top: -30px;
+    letter-spacing: 2.5px;
+    background: #4568DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul #logo:hover {
+    border-bottom: none;
+}
+
+main, header {
+    max-width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#grid-container {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+header h1 {
+    font-size: 45px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+header h5 {
+    margin: 15px 0px 15px 0px;
+    opacity: 0.5;
+    font-weight: 100;
+    font-size: 22px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+header figure {
+    margin: 50px 0 35px 0;
+}
+
+header figure img {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    max-height: 600px;
+    width: auto;
+    border-radius: 12px;
+    margin-top: 15px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.grid-child {
+    padding: 20px;
+    min-height: 100px;
+    margin: 10px;
+}
+
+.grid-child h2 {
+    text-transform: capitalize;
+    font-size: 25px;
+}
+
+.grid-child svg {
+    margin: 15px 0px 15px 0px;
+    width: 45px;
+    height: 45px;
+    stroke: #8c9eff;
+}
+
+.grid-child p {
+    opacity: 0.5;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 30px;
+}
+
+footer {
+    margin-top: 75px;
+    border-top: 0.5px solid #eeeeee;
+    padding: 15px 0px 25px 0px;
+    text-align: center;
+}
+
+footer h5 {
+    opacity: 0.3;
+    padding: 10px;
+}
+
+footer p {
+    opacity: 0.5;
+}
+
+footer ul {
+    margin-top: 15px;
+}
+
+footer ul li {
+    opacity: 0.7;
+}
+
+footer figure img {
+    max-height: 100px;
+    position: absolute;
+    margin-top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 50px;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.read-more {
+    padding: 5px 20px 5px 20px;
+    letter-spacing: 1px;
+    color: #8c9eff;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 100;
+    text-transform: uppercase;
+    border: 1px solid #8c9eff;
+    margin-top: 20px;
+    transition: ease-in-out 0.3s;
+}
+
+.read-more:hover {
+    color: #ffffff;
+    background-color: #8c9eff;
+    box-shadow: 0px 9px 28px rgba(0, 0, 0, 0.09);
+}
+
+#current {
+    border-bottom: 2px solid #8c9eff;
+}
+
+#article-border {
+    box-shadow: 0px 9px 28px rgba(0, 0, 0, 0.09);
+    max-width: 150px;
+    min-height: 7.5px;
+    background-color: red;
+    margin: 35px auto 70px auto;
+    border-radius: 20px;
+    background: #4568DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* SECTIONS PAGE STYLES */
+
+#components-example-img {
+    max-height: 400px;
+    width: auto;
+    max-width: 100%;
+    margin-top: 35px;
+    border-radius: 12px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.frameworks .grind-child {
+    padding: 0;
+    margin: 0;
+}
+
+.framework {
+    box-shadow: none;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 100%;
+}
+
+section {
+    margin: 35px 0px 50px 0px;
+}
+
+section p {
+    text-align: left;
+    line-height: 2;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+figcaption {
+    margin: 25px 0px 75px 0px;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.grid-child figcaption {
+    margin-bottom: 20px;
+}
+
+#paperplane {
+    max-height: 300px;
+    width: auto;
+    opacity: 0.5;
+    transform: rotate(-30deg);
+}
+
+blockquote {
+    font-size: 18px;
+}
+
+blockquote svg {
+    margin: 30px 0px 15px 0px;
+    height: 32px;
+    width: 32px;
+    stroke: #8c9eff;
+}
+
+main ul {
+    margin-top: 40px;
+}
+
+main #grid-container {
+    margin-top: 0;
+}
+
+main #grid-container .grid-child ul li {
+    margin-bottom: 10px;
+    list-style: none;
+    text-align: left;
+    font-size: 22px;
+}
+
+main #grid-container .grid-child ul li svg {
+    height: 22px;
+    width: 22px;
+    stroke: #8c9eff;
+    padding-right: 15px;
+    margin: 0;
+}
+
+
+@media (max-width: 900px) {
+    #grid-container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    header figure img {
+        max-height: 350px;
+    }
+    
+    header h1 {
+        font-size: 30px;
+    }
+    
+    nav {
+        display: block;
+        clear: both;
+        text-align: center;
+        line-height: 35px;
+        padding-bottom: 30px;
+    }
+    
+    nav ul li, nav ul #logo {
+        display: block;
+        float: none;
+    }
+    
+    #logo {
+        margin: 25px 0px 25px 0px;
+    }
+    
+    #paperplane {
+        max-height: 150px;
+        width: auto;
+        opacity: 0.5;
+        transform: rotate(0deg);
+    }
+    
+    .grid-child {
+        padding: 0;
+    }
+    
+    #current {
+        border-bottom: none;
+    }
+    
+    #current a {
+        color: #8c9eff;
+    }
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
