@@ -106,8 +106,8 @@ main, #content {
     position: absolute;
     top: 0;
     left: 0;
-    height: 600px;
-    width: auto;
+    height: 100%;
+    width: 100%;
     background: linear-gradient(
         rgba(20, 20, 20, 0.5), 
         rgba(17, 185, 171, 0.7),
@@ -195,7 +195,6 @@ iframe {
     box-shadow: 0px 9px 28px rgba(0, 0, 0, 0.09);
     width: 70% !important;
 }
-
 
 footer figure img {
     max-height: 100px;
