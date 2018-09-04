@@ -6,7 +6,7 @@ function start() {
     
     // run emoji gallery if index file
     const url = window.location.href.split('/');
-    if (url[url.length - 1].split('.')[0] === 'index') {
+    if (url[url.length - 1] === '') {
             emoji(document.querySelector('#emoji'));
     }
 }
