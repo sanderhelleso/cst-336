@@ -283,7 +283,7 @@ main #grid-container .grid-child ul li svg {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 830px) {
     header figure img {
         max-height: 350px;
     }
