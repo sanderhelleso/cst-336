@@ -1,67 +1,130 @@
-    @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
 
-    img {
-        border-radius:20px;
-    }
+body {
+    background-color: #212121;
+    background: linear-gradient(to left, rgba(49, 29, 63, 0.6),
+    rgb(49, 29, 63, 1)),
+    url("../img/jackpot.jpg");
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
     
-    body {
-        background-color: black;
-        background-image:url("../img/bg7.jpg");
-        color: white;
-        
-    }
-    
-    #main {
-        font-family: 'Baloo Bhaina', cursive;
-        background-image:url("../img/machine.png");
-        width:600px;
-        height:500px;
-        position:relative;
-        margin:0 auto;
-    }
-    
-    #reel1, #reel2, #reel3 {
-        top:248px;
-        position:absolute;
-    }
-    
-    #reel1{
-        left:145px;
-    }
-    #reel2{
-        left:252px;
-    }
-    #reel3{
-        left:357px;
-    }
-    
-    input{
-        top:75px;
-        left:530px;
-        position:absolute;
-        font-size:1.3em;
-        background-color: Transparent;
-        border:none;
-        outline:none; /*hides button outline when clicking on it*/
-        font-weight:bold;
-        color:yellow;
-        cursor:pointer;
-    }
-    
-    #output{
-     width:600px;   
-     margin:0 auto;
-     position:absolute;
-     text-align:center;
-     top:450px;
-     font-size:1.5em;
-     line-height: .7em;
-    }
-    
-    footer{
-        font-family: "Times New Roman", Georgia, Serif;
-        font-size:.8em;
-        width:600px;
-        margin:0 auto;
-        padding-top:10px;
-    }
+    color: #45eba5;
+    font-family: 'Megrim', cursive;
+
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#signsCont {
+    margin-left: 2%;
+}
+
+.pointImgCont {
+    margin-top: 13.5px;
+    display: block;
+    max-width: 155px;
+}
+
+.pointImgCont h5 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.pointImg {
+    max-height: 50px;
+    width: auto;
+}
+
+.jackpotImg {
+    display: inline-block;
+    max-height: 150px;
+    width: auto;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    color: #eeeeee;
+}
+
+h1 span {
+    color: #45eba5;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#jackpotCont {
+    margin: 5% 25% 0% 0%;
+    text-align: center;
+}
+
+#message {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+#statsCont {
+    position: absolute;
+    right: 2%;
+    top: 0;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h3 span {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+h2 span {
+    font-size: 50px;
+    color: white;
+}
+
+#playAgain {
+    padding: 20px;
+    font-size: 22px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #45eba5;
+    text-decoration: none;
+    border: 2px solid #45eba5;
+    transition: ease-in-out 0.5s;
+}
+
+#playAgain:hover {
+    border: 2px solid #45eba5;
+    background-color: #45eba5;
+    color: white;
+}
+
+h5 span {
+    color: white;
+}
+
+#cr {
+    font-family: 'Poiret One', cursive;
+    position: absolute;
+    right: 1%;
+    bottom: 0;
+    color: white;
+    opacity: 0.5;
+}

@@ -1,18 +1,18 @@
+<?php
+    include 'functions.php';           
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="js/index.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Megrim|Poiret+One" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
+        </style>
         <title> 777 Slot Machine </title>
     </head>
     <body>
-        
-        <?php
-        
-        $symbols = array("grapes", "orange", "lemon", "seven", "cherry"); // array with potensial imgs
-        $index = rand(0, sizeof($symbols) - 1); // get random number from 0 to length of symbols array
-        
-        echo "<img src='img/$symbols[$index].png' alt='Seven' title='Seven' />"; // insert random img to page
-        
-        ?>
-        
+        <p id="cr">&copy; Sander Hellesoe</p>
     </body>
 </html>
