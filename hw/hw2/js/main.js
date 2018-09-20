@@ -21,8 +21,7 @@ function loadGallery()  {
     
     // display loader
     document.querySelector('#loader-cont').className = 'animated bounceIn';
-    document.querySelector('#loader-cont').style.display = 'block';
-    
+
     // fetch wallpapers
     $.get('./inc/functions.php', data => {
           $("#gallery").html(data);
@@ -35,14 +34,17 @@ function loadGallery()  {
         
         // fade out loader
         document.querySelector('#loader-cont').className = 'animated bounceOut';
-        setTimeout(() => {
-            document.querySelector('#loader-cont').style.display = 'none';
-        }, 1000);
         
         // re activate button
         fetchDataBtn.setAttribute('disabled', false);
         fetchDataBtn.className = '';
         fetchDataBtn.addEventListener('click', loadGallery);
+        
+        Array.from(document.querySelectorAll('.grid-item')).forEach(item => {
+            setTimeout(() => {
+                item.className = 'grid-item unblur';
+            }, 1000);
+        });
     });
 }
 

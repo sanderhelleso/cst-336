@@ -1,7 +1,7 @@
 <?php
     
     // check and erease old files
-    ereaseFiles();
+    //ereaseFiles();
     
     // fetch random wallpapers
     fetchBackgrounds();
@@ -19,19 +19,22 @@
             // fetch random wallpapers and download / display with download url
             $wallpaperID = rand(1, $numImagesAvailable);
             $wallpaperSrc = "$url/$id/?sig=$wallpaperID";
-            $downloadURL = download($wallpaperSrc, $timestamp, $wallpaperID);
+            //$downloadURL = '';//download($wallpaperSrc, $timestamp, $wallpaperID);
             
-            echo "<div class='grid-item'>";
+            echo "<div class='grid-item blur animated zoomIn'>";
                 echo "<img class='wallpaper-option grid-child' src='$wallpaperSrc' alt='wallaper-$id'>";
                 echo "<div class='middle'>";
-                    echo "<div class='download-btn'>Download<a href='$downloadURL' target='_blank' download></a></div>";
+                    echo "<div class='download-btn'>Download<a href='$wallpaperSrc' target='_blank' download></a></div>";
                 echo "</div>";
             echo "</div>";
         }
         echo "</div>";
     }
     
-    // download and returns download path for user
+    /********************************************************************
+     *  Following code is commented due to storage limitation of heroku
+     * *****************************************************************
+    /*download and returns download path for user
     function download($url, $timestamp, $id) {
         
         // make dir if not present
@@ -59,5 +62,5 @@
                 rmdir($folder);
             }
         }
-    }
+    }*/
 ?>

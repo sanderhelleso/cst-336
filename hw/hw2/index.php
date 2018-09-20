@@ -18,8 +18,7 @@
         </header>
         
         <div id='loader-cont' class="animated bounceIn">
-            <h5>Hang on!</h5>
-            <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
             <p>Fetching some sweet wallpapers...</p>
         </div>
         <main id='gallery'>
