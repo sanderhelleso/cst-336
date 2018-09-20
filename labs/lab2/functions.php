@@ -19,6 +19,7 @@
     echo "<div id='grid-container'>";
     showSignsAndScore($files);
     play($path, $files);
+    
     function play($path, $files) {
         
         // function to create a random img with sign from folder
@@ -84,7 +85,7 @@
         displayPoints($GLOBALS['signs']);
         
         printPoints($GLOBALS['points']);
-        echo "<a id='playAgain' href='./'>Play Again</a>";
+        echo "<a id='playAgain' >Play Again</a>";
         echo "</div>";
         
         // clear array with signs for each time user clicks play
