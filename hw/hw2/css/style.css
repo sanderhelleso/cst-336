@@ -7,9 +7,6 @@ body {
     margin: 0 auto;
 }
 
-main {
-    min-height: 100vh;
-}
 
 header p, h5 {
     font-family: 'Open Sans', sans-serif;
@@ -22,6 +19,7 @@ header {
 
 header h1 {
     font-size: 5rem;
+    margin-top: 5rem;
     margin-bottom: 0;
 }
 
@@ -52,6 +50,7 @@ header a {
     background-color: #00e988;
    color: #ffffff;
    border: 2px solid #00e988;
+   border-radius: 40px;
    font-size: 16px;
    text-transform: uppercase;
    letter-spacing: 3px;
@@ -71,7 +70,7 @@ header .disabled {
 }
 
 header a:hover {
-    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
 }
 
 footer {
@@ -190,6 +189,19 @@ footer h5 {
     21px 21px rgba(0,0,0,0.01),
     22px 22px rgba(0,0,0,0.01),
     23px 23px rgba(0,0,0,0.01);
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.no-select:focus {
+    outline: none !important;
 }
 
 #border {

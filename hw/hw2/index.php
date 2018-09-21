@@ -12,7 +12,7 @@
         <header>
             <h1 class="long-shadow animated fadeIn">Wallif<span>y</span></h1>
             <p>Enjoy, discover and download new wallpapers</p>
-            <a id="generate">Generate Wallpapers</a>
+            <a id="generate" class="no-select">Generate Wallpapers</a>
             <h5>Powered by the Unsplash API</h5>
             <div id="border" class="animated fadeIn"></div>
         </header>
