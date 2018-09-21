@@ -6,7 +6,7 @@
         
         // ids of wallpaper categories
         $collectionIDs = array(1111678, 1065412, 1111680, 162468, 162213, 357786, 1346770, 1889046, 1922729);
-        $numImagesAvailable = 50;
+        $numImagesAvailable = 70;
         $url = "https://source.unsplash.com/collection";
 
         echo "<div class='grid-container'>";

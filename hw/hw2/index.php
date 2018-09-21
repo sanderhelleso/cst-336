@@ -11,15 +11,15 @@
     <body>
         <header>
             <h1 class="long-shadow animated fadeIn">Wallif<span>y</span></h1>
-            <p>Enjoy, discover and download new wallpapers</p>
+            <p>Enjoy, discover and download incredible wallpapers</p>
             <a id="generate" class="no-select">Generate Wallpapers</a>
             <h5>Powered by the Unsplash API</h5>
             <div id="border" class="animated fadeIn"></div>
         </header>
-        
+
         <div id='loader-cont' class="animated bounceIn">
             <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-            <p>Fetching some sweet wallpapers...</p>
+            <p id='loading-message'>.</p>
         </div>
         <main id='gallery'>
         </main>
