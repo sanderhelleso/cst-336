@@ -1,15 +1,24 @@
 window.onload = start;
 
 function start() {
+    document.body.className = localStorage.getItem('mode');
+
+    // set mode and load galley
+    darkMode(1);
     loadGallery();
+    
+    // add events
     document.querySelector('#generate').addEventListener('click', loadGallery);
+    document.querySelector('#dark-mode').addEventListener('click', darkMode);
 }
 
 function loadGallery()  {
     
-    // disable button
+    // scroll to top of page and disable sroll while geerating
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     document.body.style.overflowY = 'hidden';
+    
+    // disable generate button
     const fetchDataBtn = document.querySelector('#generate');
     fetchDataBtn.removeEventListener('click', loadGallery);
     fetchDataBtn.setAttribute('disabled', true);
@@ -50,10 +59,11 @@ function loadGallery()  {
     loaderCont.className = 'animated bounceIn';
     loaderCont.querySelector('p').innerHTML = `Fetching some ${words[Math.floor(Math.random() * words.length)]} wallpapers...`;
 
-    // fetch wallpapers
+    // fetch wallpapers from backend
     $.get('./inc/functions.php', data => {
           $("#gallery").html(data);
     })
+    // activate download buttons and display images AFTER they are loaded
     .done(() => {
         // add events to buttons
         Array.from(document.querySelectorAll('.download-btn')).forEach(btn => {
@@ -68,17 +78,44 @@ function loadGallery()  {
         fetchDataBtn.className = '';
         fetchDataBtn.addEventListener('click', loadGallery);
         
+        // unblur images
         Array.from(document.querySelectorAll('.grid-item')).forEach(item => {
             setTimeout(() => {
                 item.className = 'grid-item unblur';
             }, 1000);
         });
-        setTimeout(() => {
-            document.body.style.overflowY = 'auto';
-            $("html, body").delay(200).animate({
-                scrollTop: $(document.querySelector('#gallery')).offset().top - 25 
-            }, 500);
-        })
+        // activate scrollbar and scroll to generated images
+        document.body.style.overflowY = 'auto';
+        $("html, body").delay(200).animate({
+            scrollTop: $(document.querySelector('#gallery')).offset().top - 25 
+        }, 500);
     });
+}
+
+function darkMode(start) {
+    const mode = localStorage.getItem('mode');
+    if (mode === null) {
+        localStorage.setItem('mode', 'light');
+    }
+    
+    else if (mode === 'dark') {
+        document.querySelector('#dark-mode').innerHTML = 'Light Mode';
+    }
+    
+    if (start === 1) {
+        return;
+    }
+    
+    if (mode === 'light') {
+        document.body.className = 'dark';
+        localStorage.setItem('mode', 'dark');
+        this.innerHTML = 'Light Mode';
+    }
+    
+    else {
+        document.body.className = '';
+        localStorage.setItem('mode', 'light');
+        this.innerHTML = 'Dark Mode';
+    }
 }
 

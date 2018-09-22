@@ -19,6 +19,42 @@ body {
     max-width: 90%;
     margin: 0 auto;
     overflow-y: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.dark {
+    background-color: #212121;
+}
+
+.dark #dark-mode {
+    
+}
+
+.dark p {
+    color: #616161 !important;
+}
+
+.dark h1, h5 {
+    color: #757575;
+}
+
+#dark-mode {
+    position: absolute;
+    right: 2%;
+    top: 4%;
+    padding: 10px;
+    border: 2px solid #00e988;
+    color:  #757575;
+    font-weight: 100;
+    cursor: pointer;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.dark #dark-mode {
+    border: 2px solid #7F00FF;
 }
 
 main {
@@ -32,7 +68,7 @@ header p, h5 {
 
 header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-top: 15vh;
 }
 
 header h1 {
@@ -62,6 +98,22 @@ header p {
     color: #bdbdbd;
     margin: 0 0 3rem 0;
     font-size: 14px;
+}
+
+.dark header a {
+    background-color: #7F00FF;
+    border: 2px solid #7F00FF;
+}
+
+.dark .download-btn {
+    background-color: #7F00FF;
+    border: 2px solid #7F00FF;
+}
+
+.dark .disabled {
+    background-color: #424242 ;
+    color: #616161 !important;
+    border: 2px solid #424242  !important;
 }
 
 header a {
@@ -102,6 +154,11 @@ footer h5 {
     font-weight: 100;
     text-align: center;
     border-top: 1px solid #eeeeee;
+}
+
+.dark footer h5 {
+    color: #616161;
+    border-top: 1px solid #616161;
 }
 
 .grid-container {
