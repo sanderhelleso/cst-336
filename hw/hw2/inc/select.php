@@ -8,16 +8,9 @@
                 echo "<option value='$i' selected='selected'>" . $i . "</option>";
             }
             
-            if ($i == 6) {
+            else if ($i % 3 == 0) {
                 echo "<option value='$i'>" . $i . "</option>";
-            }
-            
-            if ($i == 9) {
-                echo "<option value='$i'>" . $i . "</option>";
-            }
-            
-            if ($i == 12) {
-                echo "<option value='$i'>" . $i . "</option>";
+
             }
         }
     echo "</select>";
