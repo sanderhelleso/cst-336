@@ -1,12 +1,13 @@
 window.onload = start;
 
 function start() {
+    
+    // get theme
     document.body.className = localStorage.getItem('mode');
 
     // set mode and load galley
     darkMode(1);
-    loadGallery();
-    
+
     // add events
     document.querySelector('#generate').addEventListener('click', loadGallery);
     document.querySelector('#dark-mode').addEventListener('click', darkMode);
@@ -56,11 +57,12 @@ function loadGallery()  {
     // display loader
     const words = ['awesome', 'amazing', 'sick', 'incredible', 'legendary', 'insane', 'cool', 'funky', 'fresh', 'clean'];
     const loaderCont = document.querySelector('#loader-cont');
+    loaderCont.style.display = 'block';
     loaderCont.className = 'animated bounceIn';
     loaderCont.querySelector('p').innerHTML = `Fetching some ${words[Math.floor(Math.random() * words.length)]} wallpapers...`;
 
     // fetch wallpapers from backend
-    $.get('./inc/functions.php', data => {
+    $.get('./inc/functions.php', { amount: document.querySelector('#select-amount').value }, data => {
           $("#gallery").html(data);
     })
     // activate download buttons and display images AFTER they are loaded

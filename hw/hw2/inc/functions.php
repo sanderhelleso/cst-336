@@ -6,11 +6,26 @@
         
         // ids of wallpaper categories
         $collectionIDs = array(1111678, 1065412, 1111680, 162468, 162213, 357786, 1346770, 1889046, 1922729, 1538150, 2254180, 935527);
-        $numImagesAvailable = 70;
+        $numImagesAvailable = 60;
         $url = "https://source.unsplash.com/collection";
+        $amount = $_GET['amount']; // fetched from client select box
+        
+        // create random category options out of amount selected by user
+        $selectedCategories = array();
+        for ($i = 0; $i < $amount; $i++) {
+            
+            // make sure we get unique categories
+            $id = $collectionIDs[rand(0, sizeof($collectionIDs))];
+            while (in_array($id, $selectedCategories)) {
+                $id = $collectionIDs[rand(0, sizeof($collectionIDs))];
+            }
+            
+            // add unique category
+            array_push($selectedCategories, $id);
+        }
 
         echo "<div class='grid-container'>";
-        foreach ($collectionIDs as $id) {
+        foreach ($selectedCategories as $id) {
             
             // fetch random wallpapers and download / display with download url
             $wallpaperID = rand(1, $numImagesAvailable);
@@ -28,10 +43,9 @@
         echo "</div>";
     }
     
-    /***********************************************************************
-     *  Following code is commented out due to storage limitation of heroku
-     *  and because the homework required me to use 1 more loop in php
-     * *********************************************************************
+    /**************************************************************************
+     **  Following code is commented out due to storage limitation of heroku **
+     * ************************************************************************
     /*download and returns download path for user
     function download($url, $timestamp, $id) {
         
