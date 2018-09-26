@@ -4,7 +4,7 @@
         for ($i = 1; $i < 10; $i++) {
             
             if ($i == 3) {
-                echo "<option value='$i'>" . $i . "</option>";
+                echo "<option value='$i' selected='selected'>" . $i . "</option>";
             }
             
             if ($i == 6) {
@@ -12,7 +12,7 @@
             }
             
             if ($i == 9) {
-                echo "<option value='$i' selected='selected'>" . $i . "</option>";
+                echo "<option value='$i'>" . $i . "</option>";
             }
         }
     echo "</select>";

@@ -1,7 +1,7 @@
 window.onload = start;
 
 function start() {
-    
+
     // get theme
     document.body.className = localStorage.getItem('mode');
 
