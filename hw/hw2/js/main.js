@@ -5,7 +5,7 @@ function start() {
     // get theme
     document.body.className = localStorage.getItem('mode');
 
-    // set mode and load galley
+    // set mode
     darkMode(1);
 
     // add events
