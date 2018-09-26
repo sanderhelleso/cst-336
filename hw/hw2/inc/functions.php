@@ -24,7 +24,7 @@
             // make sure we get unique categories
             $id = $collectionIDs[rand(0, sizeof($collectionIDs) - 1)];
             while (in_array($id, $selectedCategories)) {
-                $id = $collectionIDs[rand(0, sizeof($collectionIDs))];
+                $id = $collectionIDs[rand(0, sizeof($collectionIDs) - 1)];
             }
             
             // add unique category
