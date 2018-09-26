@@ -1,14 +1,21 @@
 <?php
-
-    // fetch random wallpapers
+    
+    // run code on button click from client
     fetchBackgrounds();
+    
+    // fetch random wallpapers, encode and display to user
     function fetchBackgrounds() {
         
         // ids of wallpaper categories
         $collectionIDs = array(1111678, 1065412, 1111680, 162468, 162213, 357786, 1346770, 1889046, 1922729, 1538150, 2254180, 935527);
         $numImagesAvailable = 70;
+        shuffle($collectionIDs);
+        
+        // API endpoint
         $url = "https://source.unsplash.com/collection";
-        $amount = $_GET['amount']; // fetched from client select box
+        
+        // fetched from client select box
+        $amount = $_GET['amount']; 
         
         // create random category options out of amount selected by user
         $selectedCategories = array();
@@ -30,7 +37,7 @@
             // fetch random wallpapers and download / display with download url
             $wallpaperID = rand(1, $numImagesAvailable);
             $wallpaperSrc = "$url/$id/?sig=$wallpaperID";
-            $encodeSize = round(strlen(file_get_contents($wallpaperSrc)) / 1024); // in KB
+            $encodeSize = round(strlen(file_get_contents($wallpaperSrc)) / 1024); // source size in KB
             $imageData = base64_encode(file_get_contents($wallpaperSrc)); // base64 encoding of image
             $timestamp = time();
 
