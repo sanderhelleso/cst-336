@@ -1,3 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani|Megrim');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
-    background-color: red;
+    background-color: #331940;
+    color: #5e366a;
+    overflow: hidden;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#form-landing-image {
+    background-color: #212121;
+    background: linear-gradient(to right, rgba(51, 25, 64, 1),
+    rgb(12, 202, 152, 0.4)),
+    url("../img/cover.jpg");
+    min-height: 100vh; 
+    max-height: 100vh;
+    min-width: 40vw;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+#form-heading-intro {
+    margin: 5rem 0 0 0;
+    font-size: 20px;
+    letter-spacing: 10px;
+    font-weight: 800;
+    opacity: 0.5;
+    
+}
+
+#form-heading {
+    margin-bottom: 1.5rem;
+    color: #0cca98;
+    font-size: 4rem;
+    letter-spacing: 10px;
+    font-weight: 800;
+    font-family: 'Megrim', cursive;
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+#form-heading span {
+    
+}
+
+#form-intro {
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 65%;
+    margin: 0 auto 3rem auto;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+#form-button {
+    font-weight: 600;
+    border-radius: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 16px 32px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    transition: ease-in-out 0.3s;
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #212121;
+}
+
+#form-button:hover {
+    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+}
+
+#got-account {
+    margin: 0 auto;
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 1.75rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: block;
+}
+
+.long-shadow {
+    text-shadow:1px 1px rgba(0,0,0,0.01),
+    2px 2px rgba(0,0,0,0.03),
+    3px 3px rgba(0,0,0,0.025),
+    4px 4px rgba(0,0,0,0.02),
+    5px 5px rgba(0,0,0,0.015),
+    6px 6px rgba(0,0,0,0.01),
+    7px 6px rgba(0,0,0,0.01),
+    8px 8px rgba(0,0,0,0.01),
+    9px 8px rgba(0,0,0,0.01),
+    10px 10px rgba(0,0,0,0.01),
+    11px 11px rgba(0,0,0,0.01),
+    12px 12px rgba(0,0,0,0.01),
+    13px 13px rgba(0,0,0,0.01),
+    14px 14px rgba(0,0,0,0.01),
+    15px 15px rgba(0,0,0,0.01),
+    16px 16px rgba(0,0,0,0.01),
+    17px 17px rgba(0,0,0,0.01),
+    18px 18px rgba(0,0,0,0.01),
+    19px 19px rgba(0,0,0,0.01),
+    20px 20px rgba(0,0,0,0.01),
+    21px 21px rgba(0,0,0,0.01),
+    22px 22px rgba(0,0,0,0.01),
+    23px 23px rgba(0,0,0,0.01);
 }
