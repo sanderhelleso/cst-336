@@ -11,6 +11,11 @@ body {
     color: #5e366a;
     overflow: hidden;
     font-family: 'Rajdhani', sans-serif;
+    transition: 0.3s ease-in-out;
+}
+
+.dark {
+    background-color: #000000;
 }
 
 .grid-container {
@@ -49,7 +54,7 @@ body {
     
 }
 
-#form-heading {
+#form-heading, #form-heading-stage2 {
     margin-bottom: 1.5rem;
     color: #0cca98;
     font-size: 4rem;
@@ -79,7 +84,10 @@ body {
 
 #form-button {
     font-weight: 600;
-    border-radius: 40px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -132,4 +140,24 @@ body {
     21px 21px rgba(0,0,0,0.01),
     22px 22px rgba(0,0,0,0.01),
     23px 23px rgba(0,0,0,0.01);
+}
+
+#form {
+    display: none;
+}
+
+#form-heading-stage2 {
+    margin: 5rem auto;
+    font-size: 2rem;
+    max-width: 50%;
+    min-width: 50%;
+    letter-spacing: 10px;
+    font-weight: 800;
+}
+
+form input {
+    width: 50%;
+    margin: 0 auto 1rem auto;
+    height: 35px;
+    display: none;
 }
