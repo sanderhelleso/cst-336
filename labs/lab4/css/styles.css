@@ -1,0 +1,15 @@
+    body{
+        opacity:0.9;
+        width:100%;
+        text-align:center;
+    }
+    
+    input {
+        font-size: 3em;
+        color: black;
+    }
+    
+    #carousel-example-generic {
+         margin: 0 auto;   
+         width: 700px;
+    }
