@@ -32,19 +32,31 @@ function showForm() {
     
     // manipulate cover
     const cover = document.querySelector('#form-landing-image');
-    cover.style.background = 'linear-gradient(to right, rgba(226, 62, 87, 1),rgba(51, 25, 64, 0.5)),url("./img/cover2.jpg")';
+    
+    // mobile / desktop
+    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    console.log(width);
+    if (width > 800) {
+        cover.style.background = 'linear-gradient(to right, rgba(226, 62, 87, 1),rgba(51, 25, 64, 0.5)),url("./img/cover2.jpg")';
+    }
+    
+    else {
+        cover.style.background = 'linear-gradient(rgba(51, 25, 64, 0.5),rgba(226, 62, 87, 1)),url("./img/cover2.jpg")';
+        document.querySelector('#form').style.marginTop = '-50vh';
+    }
+    
     cover.style.backgroundPosition = 'center';
     cover.style.backgroundRepeat = 'none';
     cover.style.backgroundSize = 'cover';
     cover.className = 'grid-item animated fadeIn';
     setTimeout(() => {
-        let timer = 250;
-        Array.from(document.querySelector('form').querySelectorAll('input, select')).forEach(input => {
+        let timer = 100;
+        Array.from(document.querySelector('form').querySelectorAll('input, select, label, button, #disclaimer')).forEach(input => {
             setTimeout(() => {
                 input.className = 'animated fadeInUp';
                 input.style.display = 'block';
             }, timer);
-            timer += 250;
+            timer += 100;
         })
     }, 250);
 }

@@ -23,17 +23,19 @@
                         <form>
                             <input type="text" placeholder="First Name" name="first-name"/>
                             <input type="text" placeholder="Last Name" name="last-name"/>
+                            <input type="date" name="birth-date">
                             <input type="text" placeholder="Street Address" name="street"/>
                             <select name="state">
                                 <?php
                                     include './inc/selectStates.php';
                                 ?>
                             </select>
+                            <button id="sign-up-button" type="submit" name="sign-up"><span class="long-shadow">Sign Up</span></button>
+                            <span id="disclaimer">You need to be atleast 18 years or older to sign up</span>
                         </form>
                     </div>
                 </div>
                 <div id="form-landing-image" class="grid-item animated fadeIn">
-                    
                 </div>
             </div>
         </main>

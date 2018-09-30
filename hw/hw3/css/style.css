@@ -144,20 +144,27 @@ body {
 
 #form {
     display: none;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+#form::-webkit-scrollbar { 
+    display: none; 
 }
 
 #form-heading-stage2 {
-    margin: 3rem auto 2rem auto;
+    margin: 1rem auto 2rem auto;
     font-size: 2.5rem;
     max-width: 60%;
     min-width: 60%;
     letter-spacing: 10px;
     font-weight: 800;
     color: #522546;
+    text-transform: uppercase;
 }
 
 #form p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
     font-weight: 600;
     color: #88304e;
@@ -165,8 +172,109 @@ body {
 }
 
 form input, form select {
-    width: 50%;
+    min-width: 450px;
+    max-width: 450px;
     margin: 0 auto 1rem auto;
     height: 35px;
     display: none;
+    border: none;
+    border-bottom: 2px solid #88304e;
+    outline: none;
+}
+
+#checkbox-cont {
+    width: 50%;
+    margin: 0 auto 1rem auto;
+}
+
+#checkbox {
+    margin: 0%;
+    width: 20px;
+    height: 25px;
+    opacity: 0;
+    float: left;
+    transform: rotate(30deg);
+}
+
+#checkbox-cont label {
+    font-size: 16px;
+    padding-left: 10px;
+    opacity: 0;
+    float: right;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #88304e;
+}
+
+#checkbox-cont:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#sign-up-button {
+    max-width: 50%;
+    min-width: 50%;
+    margin: 2rem auto 0 auto;
+    padding: 15px;
+    display: none;
+    background-color: #522546;
+    color: #e23e57;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#sign-up-button:hover {
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+}
+
+input::placeholder {
+    color: #88304e;
+    opacity: 0.5;
+}
+
+input, select {
+    color: #88304e;
+    background-color: transparent;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+form select {
+    height: 40px;
+}
+
+#disclaimer {
+    font-size: 12px;
+    font-weight: 800;
+    display: none;
+    color: #88304e;
+    margin-top: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .grid-item {
+        padding: 50px;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        overflow-y: auto;
+    }
+    
+    .grid-item:nth-child(1) { 
+        order: 2;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+    }
 }
