@@ -2,6 +2,7 @@ window.onload = start;
 
 function start() {
     document.querySelector('#form-button').addEventListener('click', animate);
+    document.querySelector('#form-button').click();
 }
 
 function animate() {
@@ -31,14 +32,14 @@ function showForm() {
     
     // manipulate cover
     const cover = document.querySelector('#form-landing-image');
-    cover.style.background = 'linear-gradient(to right, rgba(0, 0, 0, 1),rgb(0, 0, 0, 0.4)),url("./img/cover2.jpg")';
+    cover.style.background = 'linear-gradient(to right, rgba(226, 62, 87, 1),rgba(51, 25, 64, 0.5)),url("./img/cover2.jpg")';
     cover.style.backgroundPosition = 'center';
     cover.style.backgroundRepeat = 'none';
     cover.style.backgroundSize = 'cover';
     cover.className = 'grid-item animated fadeIn';
     setTimeout(() => {
         let timer = 250;
-        Array.from(document.querySelector('form').querySelectorAll('input')).forEach(input => {
+        Array.from(document.querySelector('form').querySelectorAll('input, select')).forEach(input => {
             setTimeout(() => {
                 input.className = 'animated fadeInUp';
                 input.style.display = 'block';

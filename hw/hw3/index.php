@@ -13,16 +13,22 @@
                     <div id="intro">
                         <h4 id="form-heading-intro" class="animated fadeInDown">NIGHTCLUB</h4>
                         <h1 id="form-heading" class="long-shadow animated fadeInUp">Futur<span>a</span></h1>
-                        <p id="form-intro" class="animated fadeIn">I know this pretty rave girl, Always think about her, When she says hi to me, Butterflies go right through me, And when I see her dancing, Wanna take a chance in, Getting a little closer, And maybe get to know her</p>
+                        <p id="form-intro" class="animated fadeIn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna velit, tincidunt ut consectetur quis, fermentum vitae purus. Curabitur sit amet dolor eu tortor tempus sodales</p>
                         <a id="form-button" class="long-shadow">Sign Up Today</a>
                         <a id="got-account">Allready a member?</a>
                     </div>
                     <div id="form" class="animated fadeIn">
-                        <h1 id="form-heading-stage2" class="animated fadeInUp">Can you feel the energy?</h1>
+                        <h1 id="form-heading-stage2" class="animated fadeInUp long-shadow">Can you feel the energy?</h1>
+                        <p>Fill out the form and get 50% off your first entry!</p>
                         <form>
-                            <input type="text" name="test1"/>
-                            <input type="text" name="test2"/>
-                            <input type="text" name="test3"/>
+                            <input type="text" placeholder="First Name" name="first-name"/>
+                            <input type="text" placeholder="Last Name" name="last-name"/>
+                            <input type="text" placeholder="Street Address" name="street"/>
+                            <select name="state">
+                                <?php
+                                    include './inc/selectStates.php';
+                                ?>
+                            </select>
                         </form>
                     </div>
                 </div>

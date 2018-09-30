@@ -15,7 +15,7 @@ body {
 }
 
 .dark {
-    background-color: #000000;
+    background-color: #e23e57;
 }
 
 .grid-container {
@@ -54,7 +54,7 @@ body {
     
 }
 
-#form-heading, #form-heading-stage2 {
+#form-heading {
     margin-bottom: 1.5rem;
     color: #0cca98;
     font-size: 4rem;
@@ -147,15 +147,24 @@ body {
 }
 
 #form-heading-stage2 {
-    margin: 5rem auto;
-    font-size: 2rem;
-    max-width: 50%;
-    min-width: 50%;
+    margin: 3rem auto 2rem auto;
+    font-size: 2.5rem;
+    max-width: 60%;
+    min-width: 60%;
     letter-spacing: 10px;
     font-weight: 800;
+    color: #522546;
 }
 
-form input {
+#form p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #88304e;
+    opacity: 0.8;
+}
+
+form input, form select {
     width: 50%;
     margin: 0 auto 1rem auto;
     height: 35px;
