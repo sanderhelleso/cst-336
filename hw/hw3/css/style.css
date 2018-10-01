@@ -302,6 +302,10 @@ form select {
 }
 
 @media (max-width: 800px) {
+    #form {
+        max-height: none;
+    }
+    
     body {
         overflow-y: auto;
     }
@@ -377,5 +381,10 @@ form select {
         margin-top: 1rem;
         cursor: pointer;
         display: block;
+    }
+    
+    #form p {
+        max-width: 75vw;
+        margin: 0 auto 2rem auto;
     }
 }
