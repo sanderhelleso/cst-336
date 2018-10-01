@@ -259,6 +259,14 @@ form select {
     margin-top: 1rem;
 }
 
+.error {
+    font-size: 14px !important;
+    margin: 0 auto 0 auto !important;
+    min-width: 450px;
+    max-width: 450px;
+    text-align: left;
+}
+
 @media (max-width: 1000px) {
     .grid-item {
         padding: 50px;

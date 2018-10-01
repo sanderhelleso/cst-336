@@ -1,5 +1,5 @@
 <?php
-    // validate form here
+    include './inc/validate.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,17 +25,24 @@
                         <h1 id="form-heading-stage2" class="animated fadeInUp long-shadow">Can you feel the energy?</h1>
                         <p>Fill out the form and get 50% off your first entry!</p>
                         <form method="POST">
+                            
+                            <p class="error"><?php echo $firstNameError ?></p>
                             <input type="text" placeholder="First Name" name="first-name" value="<?php echo $_POST['first-name']; ?>"/>
+
+                            <p class="error"><?php echo $lastNameError ?></p>
                             <input type="text" placeholder="Last Name" name="last-name" value="<?php echo $_POST['last-name']; ?>"/>
+
+                            <p class="error"><?php echo $birthDateError ?></p>
                             <input type="date" name="birth-date" value="<?php echo $_POST['birth-date']; ?>">
-                            <input type="text" placeholder="Street Address" name="street" value="<?php echo $_POST['street']; ?>"/>
-                            <select name="state">
+
+                            <p class="error"><?php echo $streetError ?></p>
+                            <input type="text" placeholder="Street Address" name="street" value="<?php echo $_POST['street']; ?>"/>                            <select name="state">
                                 <?php
                                     include './inc/selectStates.php';
                                 ?>
                             </select>
                             <button id="sign-up-button" type="submit" name="sign-up"><span class="long-shadow">Sign Up</span></button>
-                            <span id="disclaimer">You need to be atleast 18 years or older to sign up</span>
+                            <span id="disclaimer">You need to be atleast 21 years or older to sign up</span>
                         </form>
                     </div>
                 </div>
