@@ -1,3 +1,7 @@
+<?php
+    // validate form here
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,11 +24,11 @@
                     <div id="form" class="animated fadeIn">
                         <h1 id="form-heading-stage2" class="animated fadeInUp long-shadow">Can you feel the energy?</h1>
                         <p>Fill out the form and get 50% off your first entry!</p>
-                        <form action="inc/signup.php" method="POST">
-                            <input type="text" placeholder="First Name" name="first-name"/>
-                            <input type="text" placeholder="Last Name" name="last-name"/>
-                            <input type="date" name="birth-date">
-                            <input type="text" placeholder="Street Address" name="street"/>
+                        <form method="POST">
+                            <input type="text" placeholder="First Name" name="first-name" value="<?php echo $_POST['first-name']; ?>"/>
+                            <input type="text" placeholder="Last Name" name="last-name" value="<?php echo $_POST['last-name']; ?>"/>
+                            <input type="date" name="birth-date" value="<?php echo $_POST['birth-date']; ?>">
+                            <input type="text" placeholder="Street Address" name="street" value="<?php echo $_POST['street']; ?>"/>
                             <select name="state">
                                 <?php
                                     include './inc/selectStates.php';
