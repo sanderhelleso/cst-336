@@ -20,7 +20,7 @@
                     <div id="form" class="animated fadeIn">
                         <h1 id="form-heading-stage2" class="animated fadeInUp long-shadow">Can you feel the energy?</h1>
                         <p>Fill out the form and get 50% off your first entry!</p>
-                        <form>
+                        <form action="inc/signup.php" method="POST">
                             <input type="text" placeholder="First Name" name="first-name"/>
                             <input type="text" placeholder="Last Name" name="last-name"/>
                             <input type="date" name="birth-date">

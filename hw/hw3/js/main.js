@@ -1,11 +1,21 @@
 window.onload = start;
 
 function start() {
+    
+    // check for query
     document.querySelector('#form-button').addEventListener('click', animate);
-    document.querySelector('#form-button').click();
+    let urlParams = new URLSearchParams(window.location.search);
+    let signupParam = urlParams.get('signup');
+    if (signupParam != null) {
+        document.querySelector('#intro').style.display = 'none';
+        document.querySelector('#form-button').click();
+    }
+
+    //document.querySelector('#form-button').click();
 }
 
 function animate() {
+    updateURL();
     
     // initial fade out
     document.querySelector('#form-heading-intro').className = 'animated fadeOutUp';
@@ -59,4 +69,16 @@ function showForm() {
             timer += 100;
         })
     }, 250);
+}
+
+function updateURL() {
+    if (history.pushState) {
+        const signupUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?signup';
+        window.history.pushState({
+            path:signupUrl
+        },
+        '',
+        signupUrl
+        );
+    }
 }
