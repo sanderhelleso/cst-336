@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include './inc/validate.php';
 ?>
 
@@ -19,7 +20,7 @@
                         <h1 id="form-heading" class="long-shadow animated fadeInUp">Futur<span>a</span></h1>
                         <p id="form-intro" class="animated fadeIn">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna velit, tincidunt ut consectetur quis, fermentum vitae purus. Curabitur sit amet dolor eu tortor tempus sodales</p>
                         <a id="form-button" class="long-shadow">Sign Up Today</a>
-                        <a id="got-account">Allready a member?</a>
+                        <a href="dashboard.php" id="got-account">Allready a member?</a>
                     </div>
                     <div id="form" class="animated fadeIn">
                         <h1 id="form-heading-stage2" class="animated fadeInUp long-shadow">Can you feel the energy?</h1>
