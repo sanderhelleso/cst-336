@@ -12,6 +12,7 @@ function start() {
 
 // animate to signup section
 function animate() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     updateURL();
     window.addEventListener("resize", resize);
     
