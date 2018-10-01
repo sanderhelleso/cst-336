@@ -46,7 +46,7 @@ body {
 }
 
 #form-heading-intro {
-    margin: 5rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     font-size: 20px;
     letter-spacing: 10px;
     font-weight: 800;
@@ -141,14 +141,23 @@ body {
     23px 23px rgba(0,0,0,0.01);
 }
 
-#form {
+#form, #intro{
+    margin-top: 25vh;
+    margin-bottom: 25vh;
     display: none;
-    max-height: 95vh;
+}
+
+.grid-item {
+    max-height: 100vh;
     overflow-y: auto;
 }
 
-#form::-webkit-scrollbar { 
+.grid-item::-webkit-scrollbar { 
     display: none; 
+}
+
+#intro {
+    display: block;
 }
 
 #form-heading-stage2 {
