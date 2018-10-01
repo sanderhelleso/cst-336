@@ -6,10 +6,47 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- SEO META -->
+        <meta name="robots" content="follow, index" />
+        <meta name="publisher" content="https://github.com/sanderhelleso" />
+        <meta name="description" content="Sign up to the best night of your life today - Futura">
+        <meta property="og:site_name" content="Futura - The nr 1 nightclub in the USs">
+        <meta name="keyword" content="nightclub, party, us, dance, fun, goodtime">
+        <meta name="robots" content="index, follow">
+        
+        <!-- Google + -->
+        <meta itemprop="[Organization]">
+        <meta itemprop="name" content="Futura - The nr 1 nightclub in the US">
+        <meta itemprop="description" content="Sign up to the best night of your life today - Futura">
+        <meta property="og:site_name" content="Futura - The nr 1 nightclub in the US">
+        <meta itemprop="image" content="img/cover.jpg">
+        
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Futura - The nr 1 nightclub in the US">
+        <meta name="twitter:description" content="Sign up to the best night of your life today - Futura">
+        <meta property="og:site_name" content="Futura - The nr 1 nightclub in the US">
+        <meta name="twitter:image" content="img/cover.jpg">
+        <meta name="twitter:url" content="https://sander-hellesoe-cst-336.herokuapp.com/hw/hw3">
+        
+        <!-- Facebook -->
+        <meta property="og:title" content="Futura - The nr 1 nightclub in the US">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://sander-hellesoe-cst-336.herokuapp.com/hw/hw3">
+        <meta property="og:image" content="img/cover.jpg">
+        <meta property="og:description" content="Sign up to the best night of your life today - Futura">
+        <meta property="og:site_name" content="Futura - The nr 1 nightclub in the US"> 
+        
+        <link rel="icon" href="img/favicon.ico" type="image/gif" sizes="16x16">
         <link rel="stylesheet" href="./css/style.css" type="text/css" />
         <link rel="stylesheet" href="./css/animate.css" type="text/css" />
         <script type="text/javascript" src="./js/main.js"></script>
-        <title>Hello World</title>
+        
+        
+        <title>Futura - The nr 1 nightclub in the US</title>
     </head>
     <body>
         <main>
@@ -44,12 +81,14 @@
                             </select>
                             <button id="sign-up-button" type="submit" name="sign-up"><span class="long-shadow">Sign Up</span></button>
                             <span id="disclaimer">You need to be atleast 21 years or older to sign up</span>
+                            <a href="./" id="cancel">CANCEL</a>
                         </form>
                     </div>
                 </div>
                 <div id="form-landing-image" class="grid-item animated fadeIn">
                 </div>
             </div>
+            <span id="copyright">&#9400; Sander Hellesø</span>
         </main>
     </body>
 </html>

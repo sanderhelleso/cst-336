@@ -15,7 +15,7 @@ body {
 }
 
 .dark {
-    background-color: #e23e57;
+    background-color: #311d3f;
 }
 
 .grid-container {
@@ -69,9 +69,6 @@ body {
 
 }
 
-#form-heading span {
-    
-}
 
 #form-intro {
     font-size: 18px;
@@ -110,10 +107,12 @@ body {
     margin: 0 auto;
     font-size: 14px;
     opacity: 0.9;
-    margin-top: 1.75rem;
+    margin-top: 2rem;
     letter-spacing: 2px;
     cursor: pointer;
     display: block;
+    text-decoration: none;
+    color: #5e366a;
 }
 
 .long-shadow {
@@ -159,7 +158,7 @@ body {
     min-width: 60%;
     letter-spacing: 10px;
     font-weight: 800;
-    color: #522546;
+    color: #88304e;
     text-transform: uppercase;
 }
 
@@ -167,8 +166,21 @@ body {
     font-size: 1.4rem;
     margin-bottom: 2rem;
     font-weight: 600;
-    color: #88304e;
-    opacity: 0.8;
+    color: #522546;
+}
+
+#cancel {
+    display: block;
+    text-decoration: none;
+    margin: 0 auto;
+    padding: 1.75rem 0 1.5rem 0;
+    letter-spacing: 2px;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 20px;
+    font-weight: 800;
+    color: #522546;
+    display: none;
 }
 
 form input, form select {
@@ -271,6 +283,14 @@ form select {
     .grid-item {
         padding: 50px;
     }
+    
+    #form-intro {
+        max-width: 100%;
+    }
+    
+    #form-heading-intro {
+        margin: 2.5rem 0 0 0;
+    }
 }
 
 @media (max-width: 800px) {
@@ -286,4 +306,61 @@ form select {
         display: grid;
         grid-template-columns: auto;
     }
+    
+    #form-landing-image {
+        background-color: #212121;
+        background: linear-gradient(rgb(12, 202, 152, 0.4),
+        rgba(51, 25, 64, 1)),
+        url("../img/cover.jpg");
+        min-height: 100vh; 
+        max-height: 100vh;
+        min-width: 40vw;
+    
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+    
+    #intro {
+        margin-top: -25vh;
+    }
+    
+    #form-intro {
+        max-width: 75%;
+    }
+    
+    .mobile-form {
+        margin-top: -50vh;
+    }
+    
+    #form-heading-stage2 {
+        max-width: 85%;
+    }
+    
+    #copyright {
+        top: 0;
+        right: 0;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    form input, form select, .error {
+        min-width: 80vw;
+        max-width: 80vw;
+    }
+    
+    .grid-item {
+        padding: 10px;
+    }
+}
+
+#copyright {
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    margin-left: 5px;
+    opacity: 0.5;
 }

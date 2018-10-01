@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani|Megrim');
+
+body {
+    background-color: #311d3f;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+main {
+    max-width: 70vw;
+    margin: 10vh auto 0 auto;
+}
+
+#avatar {
+    padding: 10px;
+    padding-top: 40px;
+    max-width: 150px;
+    max-height: 150px;
+    min-height: 120px;
+    border: 4px solid #e23e57;
+    border-radius: 50%;
+    margin: 0 auto;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    font-weight: 800;
+    color: #e23e57;
+    text-align: center;
+}
+
+#message, #ticket {
+    text-align: center;
+    max-width: 40%;
+    margin: 2.5rem auto 2.5rem auto;
+    color: #88304e;
+    opacity: 0.5;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#ticket {
+    padding-top: 2.5rem;
+    border-top: 1px solid #522546;
+}
+
+#ticket span {
+    font-weight: 800;
+    color: #0cca98;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 18px;
+    font-weight: 800;
+    color: #522546;
+}
+
+@media (max-width: 1000px) {
+    main {
+        max-width: 90vw;
+    }
+    
+    #message, #ticket {
+        max-width: 80%;
+    }
+}
