@@ -296,6 +296,23 @@ form select {
     opacity: 0.5;
 }
 
+@media (min-width: 1400px) {
+    #form-intro {
+        max-width: 50%;
+        font-size: 1.7rem;
+        margin-bottom: 4rem;
+    }
+    
+    #form-button {
+        font-size: 2rem;
+        padding: 1.2rem 2.4rem;
+    }
+    
+    #form-heading {
+        font-size: 6rem;
+    }
+}
+
 @media (max-width: 1000px) {
     .grid-item {
         padding: 50px;
