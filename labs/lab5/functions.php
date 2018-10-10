@@ -3,6 +3,7 @@
 
     function displayCart() {
         if (isset($_SESSION['cart'])) {
+            
             echo "<table class='table'>";
             foreach ($_SESSION['cart'] as $item) {
                 $itemId = $item['id'];
@@ -16,7 +17,7 @@
                     
                     echo "<form method='post'>";
                         echo "<input type='hidden' name='itemId' value='$itemId'>";
-                        echo "<td><input type='text' name='update' class='form-control placeholder='$itemQuant'>";
+                        echo "<td><input type='text' name='update' class='form-control' placeholder='$itemQuant'>";
                         echo "<td><button class='btn btn-danger'>Update</button></td>";
                     echo "</form>";
                     
