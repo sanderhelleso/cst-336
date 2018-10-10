@@ -2,6 +2,7 @@
 <?php
     
     include 'functions.php';
+    session_start();
     
     if (isset($_POST['removeId'])) {
         foreach ($_SESSION['cart'] as $itemKey => $item) {
@@ -12,7 +13,7 @@
     }
     
     if (isset($_POST['itemId'])) {
-        foreach ($_SESSION['cart'] as &item) {
+        foreach ($_SESSION['cart'] as &$item) {
             if ($item['id'] == $_POST['itemId']) {
                 $item['quantity'] = $_POST['update'];
             }
@@ -45,7 +46,7 @@
                         </div>
                         <ul class='nav navbar-nav'>
                             <li><a href='index.php'>Home</a></li>
-                            li><a href='scart.php'>Cart</a>
+                            <li><a href='scart.php'>
                             <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'>
                             </span> Cart: <?php displayCartCount(); ?> </a></li>
                         </ul>
