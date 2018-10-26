@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </head>
+    
+    <style type="text/css">
+        select {
+            background-color: red;
+        }
+    </style>
+    <body>
+        <h1>Heading</h1>
+        <main class="container">
+            <div class="input-field col lg4">
+                <select>
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+                <label>Materialize Select</label>
+            </div>
+        </main>
+      
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+                var options = {};
+                var elems = document.querySelectorAll('select');
+                var instances = M.FormSelect.init(elems, options);
+             });
+      </script>
+    </body>
+</html>
