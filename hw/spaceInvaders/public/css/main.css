@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css?family=Londrina+Solid|Orbitron:400,700');
+
+body {
+    overflow: hidden;
+    background: linear-gradient(
+    rgba(23, 8, 37, 0.8), 
+    rgba(28, 255, 160, 0.8)),
+    url("../assets/ui/arcade.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#game-over input {
+    letter-spacing: 3px;
+    font-family: 'Orbitron', sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 18px;
+    padding: 1rem 0.25rem;
+    min-width: 60%;
+    background-color: transparent;
+    outline: none;
+    color: #9e9e9e;
+    border: none;
+    border-bottom: 2px solid #38ef7d;
+}
+
+#game-window, #menu, #highscores, #game-over {
+    display: none;
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.8), 
+    rgba(0, 0, 0, 0.8)),
+    url("../assets/ui/bg.jpg");
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 600px;
+    position: relative;
+    margin: 15vh auto;
+    -webkit-box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+    border-radius: 12px;
+}
+
+
+#menu {
+    display: block;
+    text-align: center;
+}
+
+#menu h1, #highscores h1, #game-over h1 {
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    color: #833ab4;
+    top: 10%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%);
+    text-shadow: 2px 2px 5px rgb(255, 115, 0);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+#menu button, #highscores button, #game-over button {
+    font-family: 'Orbitron', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background: transparent;
+    border: 2px solid #38ef7d;
+    color: #38ef7d;
+    padding: 1rem;
+    min-width: 225px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+}
+
+#game-over .disabled-btn {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+#game-over .enabled-btn {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#game-over button {
+    top: 80%;
+    transition: 0.3s ease-in-out;
+}
+
+#highscores {
+    overflow-y: auto;
+    color: white;
+}
+
+#game-over button {
+    color: #ecb621;
+    border: 2px solid #ecb621;
+}
+
+#highscores h1, #game-over h1 {
+    font-size: 40px;
+    margin-top: 0;
+    min-width: 100%;
+    text-align: center;
+}
+
+#highscores button {
+    top: 27.5%;
+    color: #ecb621;
+    border: 2px solid #ecb621;
+    padding: 1rem;
+    min-width: 175px;
+    font-size: 14px;
+}
+
+#highscores ul {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%);
+    list-style: none;
+    padding: 0;
+    min-width: 90%;
+}
+
+#highscores ul li {
+    margin: 10px 0;
+    font-size: 20px;
+    font-family: 'Londrina Solid', cursive;
+    text-align: left;
+    float: left;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: #9e9e9e;
+    height: 20px;
+    color: #9e9e9e;
+}
+
+#highscores #highscore-heading {
+    top: 42.5%;
+}
+
+#highscores #highscore-heading li {
+    color: #ffffff !important;
+    opacity: 1;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #38ef7d;
+}
+
+#highscores ul li span {
+    margin-left: 2px;
+    min-width: 125px;
+    max-width: 125px;
+    text-align: left;
+    display: inline-block;
+    word-break: break-all;
+}
+
+#menu #see-highscores {
+    color: #ecb621;
+    border: 2px solid #ecb621;
+    top: 65%;
+}
+
+#menu p {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+    font-size: 10px;
+    font-family: 'Orbitron', sans-serif;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    min-width: 100%;
+}
+
+
+#life {
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+}
+
+.life {
+    height: 40px;
+    width: 40px;
+}
+
+#player-cont {
+    position: absolute;
+    bottom: 5%;
+    animation: 0.3s transform;
+    z-index: 1337;
+}
+
+#player {
+    height: 70px;
+    width: 70px;
+    transform: rotate(180deg);
+}
+
+#score-cont {
+    position: absolute;
+    right: 4.5%;
+    top: 4%;
+}
+
+#level-cont {
+    position: absolute;
+    right: 23.5%;
+    top: 4%;
+}
+
+#stats-cont {
+    position: absolute;
+    right: 36%;
+    top: 4%;
+}
+
+#score, #level, #stats {
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Londrina Solid', cursive;
+}
+
+.bullet {
+    position: absolute;
+    border-radius: 50%;
+    bottom: 20%;
+    animation: spin 0.5s infinite linear;
+}
+
+.bullet1 {
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 12px;
+    width: 12px;
+    
+}
+
+.bullet2 {
+    background: #F2994A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 12px;
+    width: 12px;
+    
+}
+
+.bullet3 {
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 12px;
+    width: 12px;
+}
+
+.bullet4 {
+    background: #833ab4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 12px;
+    width: 12px;
+    
+}
+
+.bullet5 {
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+    height: 12px;
+    width: 12px; 
+}
+
+.mega {
+    height: 20px !important;
+    width: 20px !important;
+}
+
+
+#enemy-cont {
+    position: absolute;
+    top: 12.5%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 78%;
+    z-index: 1338;
+    transition: 0.5s ease-in-out;
+}
+
+.enemy {
+    height: 50px;
+    width: 50px;
+    margin: 0.85rem;
+    transition: 0.3s ease-in-out;
+}
+
+.spawned-enemy {
+    animation: move 3s infinite linear;
+}
+
+.explosion {
+    position: absolute;
+    z-index: 1339;
+}
+
+#announcement, #mega-ready {
+    position: absolute;
+    top: 35%;
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 10px;
+    color: white;
+    display: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 2px 2px 5px rgb(22, 231, 102);
+    z-index: 100000;
+}
+
+#mega-ready {
+    font-size: 25px;
+    color: #833ab4;
+    text-shadow: 2px 2px 5px rgb(255, 115, 0);
+}
+
+@keyframes move {
+    0% {transform:rotate(0deg);}
+    25% {transform:rotate(20deg);}
+    50% {transform:rotate(0deg);}
+    75% {transform:rotate(-20deg);}
+    100% {transform:rotate(0deg);}
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+    border-radius: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 20px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    border-radius: 12px;
+}
