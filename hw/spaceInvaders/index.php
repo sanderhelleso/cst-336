@@ -21,14 +21,14 @@
         
     <!-- Google + -->
     <meta itemprop="[Organization]">
-    <meta itemprop="name" content="Wallify - Hi Quality Wallpapers">
+    <meta itemprop="name" content="pace Invaders | A journey through space">
     <meta itemprop="description" content="Do you got what it takes to tackle the invaders from space? Play now and become the hero of space.">
     <meta property="og:site_name" content="Space Invaders | A journey through space">
     <meta itemprop="image" content="public/assets/ui/cover.jpg">
         
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Wallify - Hi Quality Wallpapers">
+    <meta name="twitter:title" content="pace Invaders | A journey through space">
     <meta name="twitter:description" content="Do you got what it takes to tackle the invaders from space? Play now and become the hero of space.">
     <meta property="og:site_name" content="Space Invaders | A journey through space">
     <meta name="twitter:image" content="public/assets/ui/cover.jpg">
