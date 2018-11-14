@@ -266,7 +266,7 @@ function shoot(megaPos) {
             bulletPosY += 5;
 
             bullet.style.bottom = `${bulletPosY}%`;
-            hitEnemy(bullet.getBoundingClientRect());
+            hitEnemy(bullet);
         }
 
         else {
@@ -349,7 +349,7 @@ function moveEnemies() {
 function levelSpeed() {
     const value = (2000 - (level * 35));
     if (value <= 500) {
-        return 500 - level;
+        return 500 - (level * 2);
     }
     
     return value;
@@ -376,7 +376,8 @@ function createEnemy(enemyIndex) {
 }
 
 // attempt to detect if enemy is hit by bullet
-function hitEnemy(bulletPos) {
+function hitEnemy(bullet) {
+    const bulletPos = bullet.getBoundingClientRect()
     Array.from(document.querySelectorAll('.enemy')).forEach((enemy) => {
         const enemyPos = enemy.getBoundingClientRect();
         if (bulletPos.x >= enemyPos.left &&
@@ -384,6 +385,7 @@ function hitEnemy(bulletPos) {
         bulletPos.y >= enemyPos.top &&
         bulletPos.y <= enemyPos.bottom) {
             if (enemy.style.opacity !== '0') {
+                gameWindow.removeChild(bullet);
                 removeEnemy(enemy);
             }
         }
