@@ -294,7 +294,7 @@ function moveEnemies() {
         enemyCont.style.top = `${enemyPosY}%`;
         enemyCont.style.left = `${enemyPosX}%`;
         hitPlayer();
-    }, (2000 - (level * 35)) <= 0 ? 800 : 2000 - (level * 35));
+    }, (2000 - (level * 35)) <= 500 ? 500 : 2000 - (level * 35));
 }
 
 // return a movement strength of 1 - 4

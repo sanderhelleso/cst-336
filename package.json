@@ -1,0 +1,25 @@
+{
+  "name": "cst-336",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node.js": "0.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanderhelleso/cst-336.git"
+  },
+  "author": "sander hellesø",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanderhelleso/cst-336/issues"
+  },
+  "homepage": "https://github.com/sanderhelleso/cst-336#readme"
+}
