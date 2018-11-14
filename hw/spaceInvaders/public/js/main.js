@@ -54,8 +54,6 @@ function initMenu() {
 
 // check window size
 function checkWindow() {
-    console.log($(window).height());   // returns height of browser viewport
-    console.log($(window).width());   // returns width of browser viewport
     const height = $(window).height();
     const width = $(window).width();
     const gameCont = document.querySelector('#game-cont');
@@ -126,6 +124,7 @@ function gameOverMenu() {
     document.title = 'Game over! | Space Invaders';
     $('body').unbind('keypress');
     gameMenu.style.display = 'none';
+    gameWindow.style.display = 'none';
     gameOverScreen.style.display = 'block';
 }
 
@@ -343,7 +342,17 @@ function moveEnemies() {
         enemyCont.style.top = `${enemyPosY}%`;
         enemyCont.style.left = `${enemyPosX}%`;
         hitPlayer();
-    }, (2000 - (level * 35)) <= 500 ? 500 : 2000 - (level * 35));
+    }, levelSpeed());
+}
+
+// set enemy movement speed depening on current level
+function levelSpeed() {
+    const value = (2000 - (level * 35));
+    if (value <= 500) {
+        return 500 - level;
+    }
+    
+    return value;
 }
 
 // return a movement strength of 1 - 4
