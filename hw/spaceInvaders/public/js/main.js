@@ -88,13 +88,12 @@ function checkBrowser() {
     // Edge 20+
     var isEdge = !isIE && !!window.StyleMedia;
     
-    if (isOpera || isIE || isIE || isEdge) {
+    if (isOpera || isIE || isEdge) {
         var gameCont = document.querySelector('#game-cont');
         var unavailable = document.querySelector('#unavailable');
         unavailable.innerHTML = 'This game is only avaiable on Chrome, Firefox and Safari';
         unavailable.style.display = 'block';
         gameCont.style.display = 'none';
-
     }
 }
 

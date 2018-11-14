@@ -6,11 +6,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Space Invaders | A journey through space</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO META -->
+    <meta name="robots" content="follow, index" />
+    <meta name="publisher" content="https://github.com/sanderhelleso" />
+    <meta name="description" content="Do you got what it takes to tackle the invaders from space? Play now and become the hero of space.">
+    <meta property="og:site_name" content="Space Invaders | A journey through space">
+    <meta name="keyword" content="space, space invaders, invaders, arcade, game">
+    <meta name="robots" content="index, follow">
+        
+    <!-- Google + -->
+    <meta itemprop="[Organization]">
+    <meta itemprop="name" content="Wallify - Hi Quality Wallpapers">
+    <meta itemprop="description" content="Do you got what it takes to tackle the invaders from space? Play now and become the hero of space.">
+    <meta property="og:site_name" content="Space Invaders | A journey through space">
+    <meta itemprop="image" content="public/assets/ui/cover.jpg">
+        
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Wallify - Hi Quality Wallpapers">
+    <meta name="twitter:description" content="Do you got what it takes to tackle the invaders from space? Play now and become the hero of space.">
+    <meta property="og:site_name" content="Space Invaders | A journey through space">
+    <meta name="twitter:image" content="public/assets/ui/cover.jpg">
+    <meta name="twitter:url" content="http://sander-hellesoe-cst-336.herokuapp.com/hw/spaceInvaders/">
+        
+    <!-- Facebook -->
+    <meta property="og:title" content="Space Invaders | A journey through space">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://sander-hellesoe-cst-336.herokuapp.com/hw/spaceInvaders/">
+    <meta property="og:image" content="public/assets/ui/cover.jpg">
+    <meta property="og:description" content="Do you got what it takes to tackle the invaders from space? Play now and become the hero of space.">
+    <meta property="og:site_name" content="Space Invaders | A journey through space"> 
+        
+    <title>Space Invaders | A journey through space</title>
     <link rel="icon" type="image/png" sizes="32x32" href="public/assets/ui/favicon.png">
+    
     <link rel="stylesheet" type="text/css" media="screen" href="public/css/animate.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
