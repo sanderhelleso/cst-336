@@ -322,6 +322,12 @@ body {
     transition: 0.3s ease-in-out;
 }
 
+#boss {
+    height: 75px;
+    width: 150px;
+    margin: 0 auto;
+}
+
 .spawned-enemy {
     animation: move 3s infinite linear;
 }

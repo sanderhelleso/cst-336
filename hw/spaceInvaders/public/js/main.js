@@ -130,7 +130,7 @@ function gameOverMenu() {
 
 // navigate back to menu 
 function backToMenu() {
-    document.title = 'Main Menu | Space Invaders';
+    document.title = 'Space Invaders | A journey through space';
     gameHighscores.style.display = 'none';
     gameOverScreen.style.display = 'none';
     gameMenu.style.display = 'block';
