@@ -198,15 +198,19 @@ body {
 
 #player-cont {
     position: absolute;
-    bottom: 5%;
+    bottom: 7.5%;
     animation: 0.3s transform;
     z-index: 1337;
+}
+
+#player-rotate {
+    transform: rotate(180deg);
 }
 
 #player {
     height: 70px;
     width: 70px;
-    transform: rotate(180deg);
+    animation: float 2s ease-in-out infinite;
 }
 
 #score-cont {
@@ -343,6 +347,21 @@ body {
     50% {transform:rotate(0deg);}
     75% {transform:rotate(-20deg);}
     100% {transform:rotate(0deg);}
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(10px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(10px);
+	}
 }
 
 ::-webkit-scrollbar {

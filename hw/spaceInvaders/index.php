@@ -49,7 +49,9 @@
             <p id="stats">Enemies Killed: </p>
         </div>
         <div id="player-cont">
-            <img id="player" src="public/assets/sprites/spaceship.png" alt="player" />
+            <div id="player-rotate">
+                <img id="player" src="public/assets/sprites/spaceship.png" alt="player" />
+            </div>
         </div>
         <div id="enemy-cont"></div>
     </div>

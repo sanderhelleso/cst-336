@@ -1,4 +1,8 @@
-window.onload = initMenu;
+ /*************************
+ *                        *
+ * @author Sander Hellesø *
+ *                        *    
+ *************************/
 
 // GLOBALS
 let gameWindow;             // main game window
@@ -27,6 +31,10 @@ let highscore;              // highscore data
 let movements;              // player movement events
 
 
+// initialize game
+window.onload = initMenu;
+
+// initiate game menu, prepearing highcores and game
 function initMenu() {
     document.querySelector('#see-highscores').addEventListener('click', seeHighscores);
     document.querySelector('#back-to-menu').addEventListener('click', backToMenu);
@@ -40,6 +48,7 @@ function initMenu() {
     saveGame.addEventListener('click', writeHighScore);
 }
 
+// spawn lifes on game start
 function spawnLife() {
     for (let i = 0; i < 3; i++) {
         const life = document.createElement('img');
@@ -50,6 +59,7 @@ function spawnLife() {
     }
 }
 
+// validate users name on game over
 function validateName(e) {
     if (e.target.value.length >= 2) {
         saveGame.disabled = false;
@@ -62,6 +72,7 @@ function validateName(e) {
     }
 }
 
+// display game over menu
 function gameOverMenu() {
     document.title = 'Game over! | Space Invaders';
     $('body').unbind('keypress');
@@ -69,6 +80,7 @@ function gameOverMenu() {
     gameOverScreen.style.display = 'block';
 }
 
+// navigate back to menu 
 function backToMenu() {
     document.title = 'Main Menu | Space Invaders';
     gameHighscores.style.display = 'none';
@@ -76,6 +88,8 @@ function backToMenu() {
     gameMenu.style.display = 'block';
 }
 
+
+// see all highscores menu
 function seeHighscores() {
     document.title = 'Highscores | Space Invaders';
     Array.from(document.querySelectorAll('.highscore-list')).forEach(list => {
@@ -89,6 +103,7 @@ function seeHighscores() {
     gameHighscores.style.display = 'block';
 }
 
+// start main game
 function startGame() {
     gameMenu.style.display = 'none';
     gameWindow.style.display = 'block';
@@ -100,6 +115,8 @@ function startGame() {
     gameLoop();
 }
 
+
+// initalize game loop
 function gameLoop() {
     loop = setInterval(() => {
         updateScore();
@@ -108,6 +125,7 @@ function gameLoop() {
     }, 100);
 }
 
+// update browser title
 function updateTitle() {
     document.title = `Level: ${level} | Score: ${score} | Space Invaders`;
 }
@@ -134,11 +152,11 @@ function moveBg() {
     bgPosY += 10;
 }
 
+// initialize player and movements
 function initPlayer() {
     player = document.querySelector('#player-cont');
     player.style.left = `${posX}%`;
-    player.style.transform = `translate(${-posX}%)`;
-    
+
     $('body').bind('keypress', (e) => {
         if (e.keyCode === 13 || e.keyCode === 32) {
             shoot();
@@ -171,12 +189,14 @@ function initPlayer() {
     });
 }
 
+// fire off mega combo
 function mega() {
     for (let i = 0; i < 20; i++) {
         shoot(i);
     }
 }
 
+// shoot bullet from players position
 function shoot(megaPos) {
     let bulletPosY = 5;
     const bullet = document.createElement('div');
@@ -208,6 +228,7 @@ function shoot(megaPos) {
     }, 75);
 }
 
+// move player to the left
 function moveLeft() {
     posX -= 4;
     
@@ -219,6 +240,8 @@ function moveLeft() {
     player.style.left = `${posX}%`;
 }
 
+
+// move player to the right
 function moveRight() {
     posX += 4;
     
@@ -230,12 +253,14 @@ function moveRight() {
     player.style.left = `${posX}%`;
 }
 
+// start new level 
 function startLevel() {
     enemiesKilled = 0;
     
     if (enemies < 18) {
         enemies++;
     }
+    
     level++;
     updateStats();
     document.querySelector('#level').innerHTML = `Level: ${level}`;
@@ -252,6 +277,7 @@ function startLevel() {
     moveEnemies();
 }
 
+// move enemies in pattern depending on level
 function moveEnemies() {
     moveVal = setInterval(() => {
         enemyPosY += getMovement();
@@ -264,16 +290,19 @@ function moveEnemies() {
             enemyPosX -= getMovement();
             moving = true;
         }
+        
         enemyCont.style.top = `${enemyPosY}%`;
         enemyCont.style.left = `${enemyPosX}%`;
         hitPlayer();
-    }, 2000 - (level * 35));
+    }, (2000 - (level * 35)) <= 0 ? 800 : 2000 - (level * 35));
 }
 
+// return a movement strength of 1 - 4
 function getMovement() {
     return Math.floor(Math.random() * 4) + 1;
 }
 
+// create a new enemy and position on screen
 function createEnemy(enemyIndex) {
     const enemy = document.createElement('img');
     enemy.src = 'public/assets/sprites/invader.png';    
@@ -288,10 +317,14 @@ function createEnemy(enemyIndex) {
     enemyCont.appendChild(enemy);
 }
 
+// attempt to detect if enemy is hit by bullet
 function hitEnemy(bulletPos) {
     Array.from(document.querySelectorAll('.enemy')).forEach((enemy) => {
         const enemyPos = enemy.getBoundingClientRect();
-        if (bulletPos.x >= enemyPos.left && bulletPos.x <= enemyPos.right && bulletPos.y >= enemyPos.top && bulletPos.y <= enemyPos.bottom) {
+        if (bulletPos.x >= enemyPos.left &&
+        bulletPos.x <= enemyPos.right &&
+        bulletPos.y >= enemyPos.top &&
+        bulletPos.y <= enemyPos.bottom) {
             if (enemy.style.opacity !== '0') {
                 removeEnemy(enemy);
             }
@@ -299,11 +332,16 @@ function hitEnemy(bulletPos) {
     });
 }
 
+// attempt to detect if player is hit by enemy
 function hitPlayer() {
     const playerPos = player.getBoundingClientRect();
     Array.from(document.querySelectorAll('.enemy')).forEach((enemy) => {
         const enemyPos = enemy.getBoundingClientRect();
-        if (playerPos.x >= enemyPos.left && playerPos.x <= enemyPos.right && playerPos.y >= enemyPos.top && playerPos.y <= enemyPos.bottom || enemyPos.bottom + 20 >= gameWindow.getBoundingClientRect().bottom) {
+        if (playerPos.x >= enemyPos.left &&
+        playerPos.x <= enemyPos.right &&
+        playerPos.y >= enemyPos.top &&
+        playerPos.y <= enemyPos.bottom || 
+        enemyPos.bottom + 20 >= gameWindow.getBoundingClientRect().bottom) {
             if (enemy.style.opacity !== '0') {
                 dead = true;
                 removeLife();
@@ -312,6 +350,7 @@ function hitPlayer() {
     });
 }
 
+// remove a life from player
 function removeLife() {
     lifes--;
     score -= 1000;
@@ -324,21 +363,25 @@ function removeLife() {
         .removeChild(Array.from(document.querySelectorAll('.life'))
         .reverse()[0]);
     }, 1000);
-
+    
+    // if out of life, game is over
     if (lifes === 0) {
         gameOver();
         return;
     }
-
+    
+    // else we update stats and trigger next level
     updateStats();
 }
 
+// game over, clean up loops and enemies remaining on screen
 function gameOver() {
     clearInterval(loop);
     clearEnemies();
     gameOverMenu();
 }
 
+// update game stats
 function updateStats() {
     document.querySelector('#stats').innerHTML = `Enemies Killed: ${enemiesKilled}/${enemies}`;
     
@@ -358,12 +401,15 @@ function updateStats() {
     }
 }
 
+
+// clear all enemies from screen
 function clearEnemies() {
     Array.from(document.querySelectorAll('.enemy')).forEach((enemy) => {
         enemyCont.removeChild(enemy);
     });
 }
 
+// display announcement of current level
 function showLevelAnnouncement() {
     const announcement = document.querySelector('#announcement');
     announcement.innerHTML = `LEVEL ${level + 1}`;
@@ -377,6 +423,8 @@ function showLevelAnnouncement() {
     }, 1000);
 }
 
+
+// display announcement of mega combo avaiable
 function showMegaCombo() {
     const announcement = document.querySelector('#mega-ready');
     announcement.className = 'animated fadeIn';
@@ -389,6 +437,7 @@ function showMegaCombo() {
     }, 750);
 }
 
+// remove enemy from game
 function removeEnemy(enemy) {
     playSound('invaderkilled');
     enemy.style.opacity = '0';
@@ -398,6 +447,7 @@ function removeEnemy(enemy) {
     updateStats();
 }
 
+// play sound depending on parameter
 function playSound(sound) {
     const audio = document.createElement('audio');
     audio.src = `public/assets/sounds/${sound}.wav`;
@@ -411,6 +461,8 @@ function playSound(sound) {
     }, 1000);
 }
 
+
+// write score to highscore list
 async function writeHighScore() {
     const scores = await getHighscores();
     const playerScore = {
@@ -421,12 +473,14 @@ async function writeHighScore() {
             "date": new Date().toJSON().slice(0,10).replace(/-/g,'/')
         }
     };
-
+    
+    // merge old and new score together
     const mergedScores = {
         ...scores,
         ...playerScore
     }
     
+    // strinify JSON and send to PHP script to save score
     const stringifyData = JSON.stringify(mergedScores);
     $.ajax({
         type: 'POST',
@@ -436,22 +490,16 @@ async function writeHighScore() {
         data: { data: stringifyData }
     })
     .always(() => {
-        sessionStorage.setItem('highscores', stringifyData);
         seeHighscores();
         reset();
     });
 }
 
+// read from JSON file and create list containig scores
 async function readHighscores() {
     
     const scores = [];
-    let scoreData;
-    
-    if (sessionStorage.highscores) {
-        scoresData = JSON.parse(sessionStorage.highscores);
-    } else {
-        scoresData = await getHighscores();
-    }
+    const scoresData = await getHighscores();
     
     $.each(scoresData, (key, val) => {
         scores.push
@@ -466,7 +514,8 @@ async function readHighscores() {
             </li>`
         );
     });
-
+    
+    // sort by score descending
     scores.sort((a, b) => { 
         return b.split('value=')[1].split('>')[0] - a.split('value=')[1].split('>')[0]
     });
@@ -477,10 +526,13 @@ async function readHighscores() {
     }).appendTo('#highscores');
 }
 
+// fetch highscore data
 async function getHighscores() {
     
     try {
-        const response = await $.getJSON('public/highscores/highscores.json');
+        
+        // no cache added so we can get fresh updates incase other players have added scores
+        const response = await $.getJSON(`public/highscores/highscores.json?nocache=${(new Date()).getTime()}`);
         return response;
     } 
     
@@ -489,6 +541,7 @@ async function getHighscores() {
     }
 }
 
+// reset game, clear and reset dependency variables
 function reset() {
     score = 0;
     level = 0;
@@ -502,7 +555,7 @@ function reset() {
     megaAvailable = false;
     totalEnemiesKilled = 0;
     loop = null;
-    enemyCont.style.top = '10%';
+    enemyCont.style.top = '12%';
     clearInterval(moveVal);
     clearEnemies();
 }
