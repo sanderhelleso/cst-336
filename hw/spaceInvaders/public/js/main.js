@@ -383,9 +383,9 @@ function hitEnemy(bullet) {
         if (bulletPos.x >= enemyPos.left &&
         bulletPos.x <= enemyPos.right &&
         bulletPos.y >= enemyPos.top &&
-        bulletPos.y <= enemyPos.bottom) {
+        bulletPos.y <= enemyPos.bottom && bullet.style.opacity !== '0') {
             if (enemy.style.opacity !== '0') {
-                gameWindow.removeChild(bullet);
+                bullet.style.opacity = '0';
                 removeEnemy(enemy);
             }
         }

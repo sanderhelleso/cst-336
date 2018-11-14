@@ -1,0 +1,36 @@
+#won,#lost {
+    display: none;
+}
+
+#man {
+    margin: 20px auto;
+    width: 600px;
+    height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+}
+
+
+#displayHint {
+    font-size: 1.8em;
+}
+#word, #letters {
+    padding: 20px 0px;
+}
+
+div {
+    text-align: center;
+}
+
+#userHint {
+    margin: 10px 0 20px 0;
+}
+
+.hint {
+    font-size: 0.6em !important;
+}
+
+.btn {
+    padding: 7px 7px !important;
+    margin: 0px 2px;
+}
