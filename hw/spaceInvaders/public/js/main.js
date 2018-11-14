@@ -36,6 +36,9 @@ window.onload = initMenu;
 
 // initiate game menu, prepearing highcores and game
 function initMenu() {
+    checkBrowser();
+    checkWindow();
+    
     document.querySelector('#see-highscores').addEventListener('click', seeHighscores);
     document.querySelector('#back-to-menu').addEventListener('click', backToMenu);
     document.querySelector('#start-game').addEventListener('click', startGame);
@@ -46,6 +49,53 @@ function initMenu() {
     gameOverScreen = document.querySelector('#game-over');
     saveGame = document.querySelector('#back-to-menu-game-over');
     saveGame.addEventListener('click', writeHighScore);
+    window.addEventListener('resize', checkWindow);
+}
+
+// check window size
+function checkWindow() {
+    console.log($(window).height());   // returns height of browser viewport
+    console.log($(window).width());   // returns width of browser viewport
+    const height = $(window).height();
+    const width = $(window).width();
+    const gameCont = document.querySelector('#game-cont');
+    const unavailable = document.querySelector('#unavailable');
+    
+    if (height < 700 || width < 700) {
+        gameCont.style.display = 'none';
+        unavailable.innerHTML = 'You need to be on a device with screen size of atleast 700x700 to play this game';
+        unavailable.style.display = 'block';
+        return;
+    }
+    
+    if (height <= 800) {
+        gameCont.style.margin = '7.5vh auto';
+    }
+    
+    unavailable.style.display = 'none';
+    gameCont.style.display = 'block';
+}
+
+// check for non-supported browsers
+function checkBrowser() {
+    
+    // Opera 8.0+
+    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+    
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
+    
+    if (isOpera || isIE || isIE || isEdge) {
+        var gameCont = document.querySelector('#game-cont');
+        var unavailable = document.querySelector('#unavailable');
+        unavailable.innerHTML = 'This game is only avaiable on Chrome, Firefox and Safari';
+        unavailable.style.display = 'block';
+        gameCont.style.display = 'none';
+
+    }
 }
 
 // spawn lifes on game start
