@@ -1,0 +1,11 @@
+form {
+    margin-bottom: 3rem;
+}
+
+.error {
+    color: #e57373;
+}
+
+.success {
+    color: #66bb6a;
+}
