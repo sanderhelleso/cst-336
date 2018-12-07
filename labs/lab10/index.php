@@ -17,11 +17,19 @@
               top: 50%;
               left: 50%;
               transform: translate(-50%);
-               min-height: 400px;
+              min-height: 400px;
               max-height: 400px;
               max-width: 400px;
               min-width: 400px;
               margin: 3rem 0;
+              box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+            }
+            
+            .carousel img {
+              min-height: 400px;
+              max-height: 400px;
+              max-width: 400px;
+              min-width: 400px;
             }
             
         </style>
@@ -57,7 +65,7 @@
     </div>
     
     <div class="container mb-5 mt-5">
-        <a href="pets.php" class="btn btn-primary btn-lg btn-block">Adopt Now!</a>
+        <a href="pets.php" class="btn btn-primary btn-lg">Adopt Now!</a>
     </div>
         
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
