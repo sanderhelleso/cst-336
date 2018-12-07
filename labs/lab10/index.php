@@ -12,6 +12,18 @@
                 text-align: center;
             }
             
+            .carousel {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%);
+               min-height: 400px;
+              max-height: 400px;
+              max-width: 400px;
+              min-width: 400px;
+              margin: 3rem 0;
+            }
+            
         </style>
    
     </head>
@@ -26,10 +38,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Adoptions</a>
+                <a class="nav-link" href="pets.php">Adoptions</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
@@ -44,7 +56,7 @@
       <h2> The "official" animal adoption website of CSUMB </h2>
     </div>
     
-    <div class="container">
+    <div class="container mb-5 mt-5">
         <a href="pets.php" class="btn btn-primary btn-lg btn-block">Adopt Now!</a>
     </div>
         
@@ -95,7 +107,6 @@
         </div>
       </div>
       
-      </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
